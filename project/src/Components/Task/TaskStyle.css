@@ -1,0 +1,15 @@
+.task_container
+{
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: green;
+    width: 100%;
+}
+
+.task_container_undone
+{
+        cursor: pointer;
+    margin-top: 10px;
+    background-color: green;
+    width: 100%;
+}

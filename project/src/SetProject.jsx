@@ -1,13 +1,16 @@
 import { useState, useEffect, use } from "react";
 import "./SetProject.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function SetProject() {
   const [projects, setProjects] = useState([]);
   const [projectName, setProjectName] = useState("");
   const [selectedProject, setSelectedProject] = useState(null);
   const [view, setView] = useState("list"); // list | project
+  const navigate = useNavigate();
 
+  
   useEffect(() => {
     axios.get("http://localhost:5000/projects").then((response) => {
       setProjects(response.data);
@@ -34,8 +37,7 @@ function SetProject() {
   };
 
   const openProject = (project) => {
-    setSelectedProject(project);
-    setView("project");
+    navigate('/frame/' + project.id);
   };
 
   const goBack = () => {
