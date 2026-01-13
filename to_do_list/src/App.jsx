@@ -1,4 +1,4 @@
-import Frame from "./Components/Frame";
+import Frame from "./Components/MainFrame/Frame";
 function App() {
   return (
     <div className="App">

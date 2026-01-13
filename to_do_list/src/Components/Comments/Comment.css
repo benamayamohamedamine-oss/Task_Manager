@@ -1,0 +1,29 @@
+.comment
+{
+    border: solid 1px;
+    width: 100%;
+    min-height: 75px;
+    display: flex;
+    justify-content: start;  
+    flex-direction: column;      
+    align-items: start; 
+    font-size: 18px; 
+    margin-top: 10px;
+     
+}
+
+.user
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+.user_com
+{
+    margin-top: 10px;
+    margin-left: 5px;
+}

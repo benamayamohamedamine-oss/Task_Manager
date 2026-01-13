@@ -1,6 +1,7 @@
 import { useState } from "react"
-import Task from "./Task"
-import "./style.css"
+import Task from "../Task/Task"
+import Comment from "../Comments/Comment"
+import "./Frame.css"
 
 function Frame()
 {
@@ -19,6 +20,29 @@ function Frame()
         }
     ]
 
+    )
+
+    const [comments, setComments] = useState([
+        {
+            key : "amine_1",
+            user_name : "amine",
+            comment : "keep it simple"
+        },
+
+        {
+            key : "ahmed_1",
+            user_name : "ahmed",
+            comment : "bad to_do_list XDD"
+        },
+
+        {
+            key : "9lawi_tab0un_1",
+            user_name : "9lawi_tab0un",
+            comment : "9lawi 9lawi taboun >:D"
+        }
+
+
+        ]
     )
 
     function get_current_task(value)
@@ -56,6 +80,13 @@ function Frame()
                 {tasks.map((tasks) => {
                     return <div className="task" key={tasks.key} onClick={()=> {handleState(tasks.key)}}><Task state={tasks.state} description={tasks.description} /></div>
                 })}
+            </div>
+            <div className="Comments_Container">
+                {comments.map((e) => {
+                    return <Comment user_name={e.user_name} comment={e.comment}/>
+                })
+
+                }
             </div>
         </div>
     )
