@@ -1,27 +1,19 @@
 import { useState } from "react";
 import Frame from "./Components/MainFrame/Frame";
+import "./SetProject.css";
 
 const SetProject = () => {
   const [projects, setProjects] = useState([]);
   const [projectName, setProjectName] = useState("");
-  const [view, setView] = useState("list"); // "list" or "project"
+  const [view, setView] = useState("list");
   const [selectedProject, setSelectedProject] = useState(null);
+  const [theme, setTheme] = useState("light");
 
   const addProject = () => {
     if (projectName.trim() === "") return;
 
-    const newProject = {
-      id: Date.now(),
-      name: projectName,
-    };
-
-    setProjects([...projects, newProject]);
+    setProjects([...projects, { id: Date.now(), name: projectName }]);
     setProjectName("");
-  };
-
-  const openProject = (project) => {
-    setSelectedProject(project);
-    setView("project");
   };
 
   const goBack = () => {
@@ -30,27 +22,36 @@ const SetProject = () => {
   };
 
   return (
-    <div className="SetProject">
+    <div className={`SetProject ${theme}`}>
+      {/* THEME TOGGLE */}
+      <div className="theme-toggle">
+        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+          {theme === "light" ? "🌙 Dark" : "☀ Light"}
+        </button>
+      </div>
+
       {view === "list" && (
         <div className="project-list">
           <h2>My Projects</h2>
 
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div className="project-input">
             <input
               type="text"
-              placeholder="Project name"
+              placeholder="Enter project name"
               value={projectName}
               onChange={(e) => setProjectName(e.target.value)}
             />
-            <button onClick={addProject}>Créer</button>
+            <button onClick={addProject}>Create</button>
           </div>
 
           <ul>
             {projects.map((p) => (
               <li
                 key={p.id}
-                onClick={() => openProject(p)}
-                style={{ cursor: "pointer", marginTop: "10px" }}
+                onClick={() => {
+                  setSelectedProject(p);
+                  setView("project");
+                }}
               >
                 {p.name}
               </li>
@@ -61,14 +62,10 @@ const SetProject = () => {
 
       {view === "project" && selectedProject && (
         <div className="project-page">
-          <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-            <button className="back-btn" onClick={goBack}>
-              ← Back
-            </button>
-            <h2>{selectedProject.name}</h2>
-          </div>
-
-          {/* AMINE TODO APP */}
+          <button className="back-btn" onClick={goBack}>
+            ← Back
+          </button>
+          <h2>{selectedProject.name}</h2>
           <Frame />
         </div>
       )}

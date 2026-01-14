@@ -1,93 +1,72 @@
-/* Frame.css */
-
-/* Main container */
+/* Main frame container */
 .Container {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 20px 25px;
-  background: #fefefe;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 30px;
+  padding: 30px;
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
 }
 
 /* Title */
 .Container h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #111827;
+  margin-bottom: 20px;
+  color: #1f2937;
 }
 
-/* Task submission form */
+/* Input zone */
 .Container label {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .Container input[type="text"] {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
+  padding: 10px 12px;
   border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.2s ease;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
 }
 
 .Container input[type="text"]:focus {
-  border-color: #4f46e5; /* purple accent */
   outline: none;
+  border-color: #6366f1;
 }
 
-/* Add button */
+/* Add task button */
 .Container button {
-  padding: 8px 16px;
-  background-color: #4f46e5;
-  color: #fff;
-  border: none;
+  padding: 10px 16px;
   border-radius: 8px;
+  border: none;
+  background: #6366f1;
+  color: white;
+  font-size: 14px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .Container button:hover {
-  background-color: #4338ca;
+  background: #4f46e5;
   transform: translateY(-1px);
 }
 
-/* Task list container */
+/* Tasks list */
 .Tasks_List {
-  margin-bottom: 30px;
-}
-
-/* Optional: individual task wrapper */
-.task {
-  margin-bottom: 10px;
-}
-
-/* Comments section */
-.Comments_Container {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .Container {
-    padding: 15px 20px;
-    margin: 20px auto;
-  }
+/* Clickable task wrapper */
+.task {
+  cursor: pointer;
+}
 
-  .Container input[type="text"] {
-    font-size: 14px;
-  }
+/* =========================
+   COMMENTS
+========================= */
 
-  .Container button {
-    font-size: 14px;
-  }
+.Comments_Container {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
 }

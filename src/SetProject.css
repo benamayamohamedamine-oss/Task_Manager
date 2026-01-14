@@ -1,295 +1,199 @@
-/* ======================= */
-/* Global App Styles       */
-/* ======================= */
-
-.App {
+/* =========================
+   PAGE & THEMES
+========================= */
+.SetProject {
   min-height: 100vh;
+  transition: background 0.4s, color 0.4s;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* top-align for project list */
-  background: #f3f4f6; /* soft neutral background */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
-  box-sizing: border-box;
+  align-items: center;
+  padding: 40px;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
-/* ======================= */
-/* SetProject Styles       */
-/* ======================= */
+.SetProject.light {
+  background: #f3f4f6;
+  color: #0f172a;
+}
 
-.SetProject {
+.SetProject.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* =========================
+   THEME TOGGLE
+========================= */
+.theme-toggle {
+  position: fixed;
+  top: 25px;
+  right: 30px;
+}
+
+.theme-toggle button {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+}
+
+/* =========================
+   PROJECT LIST CARD
+========================= */
+.project-list {
   width: 100%;
-  max-width: 800px;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 25px;
+  max-width: 600px;
+  padding: 36px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
 }
 
-/* Project List */
+.SetProject.light .project-list {
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a;
+}
+
+.SetProject.dark .project-list {
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+}
+
+/* =========================
+   TITLE
+========================= */
 .project-list h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #111827;
-}
-
-.project-list div {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.project-list input[type="text"] {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  font-size: 16px;
-  transition: border-color 0.2s ease;
-}
-
-.project-list input[type="text"]:focus {
-  border-color: #4f46e5;
-  outline: none;
-}
-
-.project-list button {
-  padding: 8px 16px;
-  background-color: #4f46e5;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.project-list button:hover {
-  background-color: #4338ca;
-  transform: translateY(-1px);
-}
-
-.project-list ul {
-  list-style: none;
-  padding: 0;
-}
-
-.project-list li {
-  padding: 10px 14px;
-  background: #f9fafb;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
-
-.project-list li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-/* Project Page */
-.project-page h2 {
-  margin: 0;
-  color: #111827;
-}
-
-.project-page .back-btn {
-  padding: 8px 16px;
-  background-color: #4f46e5;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.project-page .back-btn:hover {
-  background-color: #4338ca;
-  transform: translateY(-1px);
-}
-
-/* ======================= */
-/* Frame (Todo App) Styles */
-/* ======================= */
-
-.Container {
-  margin-top: 20px;
-  padding: 20px;
-  background: #fefefe;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-/* Title */
-.Container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #111827;
-}
-
-/* Task input form */
-.Container label {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.Container input[type="text"] {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.2s ease;
-}
-
-.Container input[type="text"]:focus {
-  border-color: #4f46e5;
-  outline: none;
-}
-
-.Container button {
-  padding: 8px 16px;
-  background-color: #4f46e5;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.Container button:hover {
-  background-color: #4338ca;
-  transform: translateY(-1px);
-}
-
-/* Task List */
-.Tasks_List {
+  font-size: 28px;
+  font-weight: 700;
   margin-bottom: 30px;
 }
 
-/* Task wrapper */
-.task {
-  margin-bottom: 10px;
-}
-
-/* Comments Container */
-.Comments_Container {
+/* =========================
+   INPUT + CREATE BUTTON
+========================= */
+.project-input {
   display: flex;
-  flex-direction: column;
   gap: 12px;
+  margin-bottom: 30px;
 }
 
-/* ======================= */
-/* Task Styles             */
-/* ======================= */
-
-.task_container {
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  padding: 12px 16px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
-
-.task_container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
-.task_container input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #4f46e5;
-  cursor: pointer;
-}
-
-.task_container span {
-  margin-left: 10px;
+.project-input input {
+  flex: 1;
+  padding: 15px 18px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
   font-size: 16px;
-  color: #333333;
+  color: inherit;
 }
 
-.task_container input[type="checkbox"]:checked + span {
-  text-decoration: line-through;
-  color: #888888;
+.SetProject.light .project-input input {
+  background: rgba(243, 244, 246, 0.5);
+  color: #0f172a;
 }
 
-/* ======================= */
-/* Comment Styles          */
-/* ======================= */
-
-.comment {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 12px 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.project-input input::placeholder {
+  color: #dbeafe;
 }
 
-.comment:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+.project-input input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #6366f1;
 }
 
-.user {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.project-input button {
+  padding: 15px 22px;
+  border-radius: 14px;
+  border: none;
   font-weight: 600;
-  color: #111827;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.user svg {
-  font-size: 20px;
-  color: #4f46e5;
+.project-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.5);
 }
 
-.user_com {
-  font-size: 15px;
-  color: #374151;
-  line-height: 1.4;
-  padding-left: 28px;
+/* =========================
+   PROJECT LIST ITEMS (CARDS)
+========================= */
+.project-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* ======================= */
-/* Responsive Adjustments  */
-/* ======================= */
-@media (max-width: 600px) {
-  .SetProject,
-  .Container {
-    padding: 15px 20px;
-  }
+.project-list li {
+  padding: 18px 22px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: rgba(99, 102, 241, 0.08);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+}
 
-  .project-list input[type="text"],
-  .Container input[type="text"] {
-    font-size: 14px;
-  }
+.project-list li:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(99, 102, 241, 0.18);
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.35);
+}
 
-  .project-list button,
-  .Container button,
-  .project-page .back-btn {
-    font-size: 14px;
-  }
+/* =========================
+   BACK BUTTON
+========================= */
+.back-btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+  margin-bottom: 20px;
+}
 
-  .user svg {
-    font-size: 18px;
-  }
+.back-btn:hover {
+  background: rgba(99, 102, 241, 0.15);
+  transform: translateX(-3px);
+}
 
-  .user_com {
-    font-size: 14px;
-    padding-left: 26px;
-  }
+/* =========================
+   PROJECT PAGE
+========================= */
+.project-page {
+  width: 100%;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
+}
+
+.SetProject.light .project-page {
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a;
+}
+
+.SetProject.dark .project-page {
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+}
+
+.project-page h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
