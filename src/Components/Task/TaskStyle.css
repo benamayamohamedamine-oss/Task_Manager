@@ -1,0 +1,41 @@
+/* TaskStyle.css */
+
+/* Container for each task */
+.task_container {
+  display: flex;
+  align-items: center;
+  background: #ffffff; /* white card */
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.task_container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Checkbox styling */
+.task_container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5; /* purple-blue accent */
+  cursor: pointer;
+}
+
+/* Task description styling */
+.task_container span {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333333;
+}
+
+/* Completed task style */
+.task_container input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: #888888;
+}

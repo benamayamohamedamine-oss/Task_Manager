@@ -1,0 +1,93 @@
+/* Frame.css */
+
+/* Main container */
+.Container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background: #fefefe;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.Container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #111827;
+}
+
+/* Task submission form */
+.Container label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.Container input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.Container input[type="text"]:focus {
+  border-color: #4f46e5; /* purple accent */
+  outline: none;
+}
+
+/* Add button */
+.Container button {
+  padding: 8px 16px;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.Container button:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* Task list container */
+.Tasks_List {
+  margin-bottom: 30px;
+}
+
+/* Optional: individual task wrapper */
+.task {
+  margin-bottom: 10px;
+}
+
+/* Comments section */
+.Comments_Container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .Container {
+    padding: 15px 20px;
+    margin: 20px auto;
+  }
+
+  .Container input[type="text"] {
+    font-size: 14px;
+  }
+
+  .Container button {
+    font-size: 14px;
+  }
+}
