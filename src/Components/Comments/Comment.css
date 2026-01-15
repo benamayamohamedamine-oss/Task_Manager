@@ -1,13 +1,15 @@
 .comment {
-  background: #ffffff;
+  background: var(--card-light);
   padding: 14px 16px;
   border-radius: 12px;
   margin-bottom: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-light);
 }
 
-/* User header */
+/* =========================
+   USER HEADER
+========================= */
 .user {
   display: flex;
   align-items: center;
@@ -18,15 +20,17 @@
 
 .user svg {
   font-size: 18px;
-  color: #6366f1;
+  color: var(--primary);
 }
 
 .user strong {
   font-size: 14px;
-  color: #1f2937;
+  color: var(--text-light);
 }
 
-/* Comment text */
+/* =========================
+   COMMENT TEXT
+========================= */
 .user_com {
   font-size: 14px;
   color: #374151;

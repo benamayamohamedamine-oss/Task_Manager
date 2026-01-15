@@ -1,0 +1,41 @@
+.navbar {
+  height: 60px;
+  background: var(--card-light);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+.nav-left {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
