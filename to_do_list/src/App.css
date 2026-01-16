@@ -1,0 +1,45 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   APP WRAPPER
+========================= */
+.App {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--bg-light),
+    #eef2ff
+  );
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  color: var(--text-light);
+}
+
+/* =========================
+   SCROLLBAR (OPTIONAL)
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}

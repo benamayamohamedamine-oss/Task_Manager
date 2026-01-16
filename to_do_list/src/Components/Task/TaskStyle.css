@@ -1,15 +1,32 @@
-.task_container
-{
-    cursor: pointer;
-    margin-top: 10px;
-    background-color: green;
-    width: 100%;
+.task_container {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background: var(--card-light);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  font-size: 15px;
+  color: var(--text-light);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-.task_container_undone
-{
-        cursor: pointer;
-    margin-top: 10px;
-    background-color: green;
-    width: 100%;
+/* Hover effect */
+.task_container:hover {
+  background: #eef2ff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+/* Checkbox styling */
+.task_container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+/* Completed task */
+.task_container input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: #6b7280;
 }

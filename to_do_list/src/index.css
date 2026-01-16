@@ -1,0 +1,47 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   CSS VARIABLES (THEME CORE)
+========================= */
+
+:root {
+  --primary: #6366f1;
+  --secondary: #22d3ee;
+
+  --bg-light: #f8fafc;
+  --bg-dark: #020617;
+
+  --text-light: #0f172a;
+  --text-dark: #e5e7eb;
+
+  --card-light: #ffffff;
+  --card-dark: #020617;
+
+  --border-light: #e5e7eb;
+  --border-dark: #1e293b;
+}
+
+/* =========================
+   BODY
+========================= */
+
+html,
+body,
+#root {
+  height: 100%;
+  
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+}
